@@ -1,0 +1,129 @@
+'Autor: Michel Rosales '
+'Fecha de creacion de una aplicacion de una boleta de pago: 1 de Enero de 2023'
+'Boleta de Pago'
+
+Public Class Form1
+    Private Sub BtnAceptar_Click(sender As Object, e As EventArgs) Handles BtnAceptar.Click
+
+
+        Dim Sueldobase As Double
+        Dim HorasExtras As Integer
+        Dim PagoHoraExtra As Double
+        Dim Renta As Double, Fonavi As Double, AFP As Double
+        Dim Ingresos As Double, Descuentos As Double, SueldoNeto As Double
+
+
+
+        Sueldobase = CDbl(TxtSueldoBase.Text)
+        HorasExtras = CInt(TxtHorasExtras.Text)
+
+
+        If Diurno.Checked Then
+
+            PagoHoraExtra = 10
+
+        End If
+        If Nocturno.Checked Then
+            PagoHoraExtra = 15
+
+        End If
+
+        TxtPagoHoraExtra.Text = CStr(PagoHoraExtra)
+        If ChkRenta.Checked Then
+
+            Renta = Sueldobase * 0.1
+
+        Else Renta = 0
+
+        End If
+        TxtRenta.Text = CStr(Renta)
+
+        If hkFonavi.Checked Then
+            Fonavi = Sueldobase * 0.07
+        Else
+            Fonavi = 0
+        End If
+
+        Txtfonavi.Text = CStr(Fonavi)
+        If ChKAFP.Checked Then
+
+            AFP = Sueldobase * 0.03
+        Else
+            AFP = 0
+
+        End If
+
+        checkAFP.Text = CStr(AFP)
+        Ingresos = Sueldobase + PagoHoraExtra * HorasExtras
+        Descuentos = Renta + Fonavi + AFP
+        SueldoNeto = Ingresos - Descuentos
+        TxtSueldoNeto.Text = CStr(SueldoNeto)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        End
+
+
+
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+End Class
